@@ -1,0 +1,84 @@
+<mvc:View controllerName="app.miningodata.controller.MiningView"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:comp="sap.ui.comp.filterbar">
+    <Page id="MiningPage" title="{i18n>title1}">
+        <content>
+            <comp:FilterBar id="hello">
+                <comp:filterItems>
+                    <comp:FilterItem id="one" name="LocId" label="LocationID">
+                        <comp:control>
+                            <Input id="Input1" placeholder="Enter LocationID" liveChange="onSearch"></Input>
+                        </comp:control>
+                    </comp:FilterItem>
+                    <comp:FilterItem  id="two" name="MinType" label="Location Description">
+                        <comp:control>
+                            <Input id="Input2" placeholder="Enter Location Description" liveChange="onSearch"></Input>
+                        </comp:control>
+                    </comp:FilterItem>
+                </comp:filterItems>
+            </comp:FilterBar>
+
+
+
+
+
+
+
+            <Button id="idCreateButton" text="Create New" press="onCreatePress"></Button>
+            <Table items="{MiningModel>/}" id="idMiningTab" mode="SingleSelectMaster" selectionChange="onRowSelection">
+                <columns>
+                    <Column id="1">
+                        <Text text="{i18n>LocId}" id="1text"></Text>
+                    </Column>
+                    <Column id="2">
+                        <Text text="{i18n>LocDesc}" id="2text"></Text>
+                    </Column>
+                    <Column id="3">
+                        <Text text="{i18n>MinRes}" id="3text"></Text>
+                    </Column>
+                    <Column id="4">
+                        <Text text="{i18n>TotCost}" id="4text"></Text>
+                    </Column>
+                    <Column id="5">
+                        <Text text="{i18n>RepMin}" id="5text"></Text>
+                    </Column>
+                    <Column id="6">
+                        <Text text="{i18n>NumDrills}" id="6text"></Text>
+                    </Column>
+                    <Column id="7">
+                        <Text text="{i18n>MinType}" id="7text"></Text>
+                    </Column>
+                    <Column id="8">
+                        <Text text="{i18n>ManDays}" id="8text"></Text>
+                    </Column>
+                    <Column id="9">
+                        <Text text="{i18n>ProbOut}" id="9text"></Text>
+                    </Column>
+                    <Column id="10">
+                        <Text text="{i18n>MinCuky}" id="10text"></Text>
+                    </Column>
+                    <Column id="11">
+                        <Text text="{i18n>Action}" id="11text"></Text>
+                    </Column>
+                </columns>
+
+                <ColumnListItem id="1List">
+                    <cells>
+                        <Text text="{MiningModel>LocId}" id="text1"></Text>
+                        <Text text="{MiningModel>LocDesc}" id="text2"></Text>
+                        <Text text="{MiningModel>MinRes}" id="text3"></Text>
+                        <Text text="{MiningModel>TotCost}" id="text4"></Text>
+                        <Text text="{MiningModel>RepMin}" id="text5"></Text>
+                        <Text text="{MiningModel>NumDrills}" id="text6"></Text>
+                        <Text text="{MiningModel>MinType}" id="text7"></Text>
+                        <Text text="{MiningModel>ManDays}" id="text8"></Text>
+                        <Text text="{MiningModel>ProbOut}" id="text9"></Text>
+                        <Text text="{MiningModel>MinCuky}" id="text10"></Text>
+                        <Button icon="sap-icon://delete" press="onDelete" id="deleteButton"></Button>
+                    </cells>
+                </ColumnListItem>
+            </Table>
+        </content>
+    </Page>
+</mvc:View>

@@ -1,0 +1,43 @@
+<mvc:View controllerName="app.miningodata.controller.UpdateView"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:f="sap.ui.layout.form">
+    <Page id="UpdatePage" title="{i18n>title2}">
+        <content>
+            <f:SimpleForm editable="true">
+                
+                <Label text="Location ID"></Label>
+                <Input id="idLocIdU" value="{MiningModel>LocId}" enabled="false"></Input>
+
+                <Label text="Location Description"></Label>
+                <Input id="idLocDesU" value="{MiningModel>LocDesc}"></Input>
+
+                <Label text="Mining Resource"></Label>
+                <Input id="idMinResU" value="{MiningModel>MinRes}"></Input>
+
+                <Label text="Total Cost"></Label>
+                <Input id="idTotCosU" value="{MiningModel>TotCost}"></Input>
+
+                <Label text="Report on Mineral"></Label>
+                <Input id="idRepOnMinU" value="{MiningModel>RepMin}"></Input>
+
+                <Label text="Number of Drills"></Label>
+                <Input id="idDrillsU" value="{MiningModel>NumDrills}"></Input>
+
+                <Label text="Type of Mineral"></Label>
+                <Input id="idTMinU" value="{MiningModel>MinType}"></Input>
+
+                <Label text="Man Days"></Label>
+                <Input id="idMdaysU" value="{MiningModel>ManDays}"></Input>
+
+                <Label text="Probability of Outcome"></Label>
+                <Input id="idPrOtU" value="{MiningModel>ProbOut}"></Input>
+
+                <Label text="Currency"></Label>
+                <Input id="idCurrKeyU" value="{MiningModel>MinCuky}"></Input>
+
+                <Button id="idButtonU" text="Update" press="onUpdate"></Button>
+            </f:SimpleForm>
+        </content>
+    </Page>
+</mvc:View>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="Z9231_MINING_SPRINT_SRV" xml:lang="en" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <EntityType Name="Z9231_MIN_SPR_ET" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="LocId"/>
+                </Key>
+                <Property Name="Mandt" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Client" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="LocId" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="LOC_ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="LocDesc" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:label="DESCRIPTION" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="MinRes" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="MIN_RES" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="TotCost" Type="Edm.Decimal" Nullable="false" Precision="16" Scale="3" sap:unicode="false" sap:unit="MinCuky" sap:label="TOT_COST" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="RepMin" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="REP_MIN" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="NumDrills" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="DLS" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="MinType" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="MIN_TYPE" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ManDays" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="M_D" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ProbOut" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="PROB_OUT" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="MinCuky" Type="Edm.String" Nullable="false" MaxLength="5" sap:unicode="false" sap:label="MCUKY" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" sap:semantics="currency-code"/>
+            </EntityType>
+            <EntityContainer Name="Z9231_MINING_SPRINT_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="Z9231_MIN_SPR_ETSet" EntityType="Z9231_MINING_SPRINT_SRV.Z9231_MIN_SPR_ET" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+            </EntityContainer>
+            <atom:link rel="self" href="http://zin-blr-srv1:8001/sap/opu/odata/sap/Z9231_MINING_SPRINT_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+            <atom:link rel="latest-version" href="http://zin-blr-srv1:8001/sap/opu/odata/sap/Z9231_MINING_SPRINT_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

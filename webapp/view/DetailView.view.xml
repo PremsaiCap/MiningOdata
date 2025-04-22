@@ -1,0 +1,43 @@
+<mvc:View controllerName="app.miningodata.controller.DetailView"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:f="sap.ui.layout.form">
+    <Page id="DetailPage" title="{i18n>title3}">
+        <content>
+            <f:SimpleForm editable="true">
+                
+                <Label text="Location ID"></Label>
+                <Text text="{MiningModel>LocId}" id="text1D"></Text>
+
+                <Label text="Location Description"></Label>
+                <Text text="{MiningModel>LocDesc}" id="text2D"></Text>
+
+                <Label text="Mining Resource"></Label>
+                <Text text="{MiningModel>MinRes}" id="text3D"></Text>
+
+                <Label text="Total Cost"></Label>
+                <Text text="{MiningModel>TotCost}" id="text4D"></Text>
+
+                <Label text="Report on Mineral"></Label>
+                <Text text="{MiningModel>RepMin}" id="text5D"></Text>
+
+                <Label text="Number of Drills"></Label>
+                <Text text="{MiningModel>NumDrills}" id="text6D"></Text>
+
+                <Label text="Type of Mineral"></Label>
+                <Text text="{MiningModel>MinType}" id="text7D"></Text>
+
+                <Label text="Man Days"></Label>
+                <Text text="{MiningModel>ManDays}" id="text8D"></Text>
+
+                <Label text="Probability of Outcome"></Label>
+                <Text text="{MiningModel>ProbOut}" id="text9D"></Text>
+
+                <Label text="Currency"></Label>
+                <Text text="{MiningModel>MinCuky}" id="text10D"></Text>
+
+                <Button id="idButtonEdt" text="Edit" press="onEdit"></Button>
+            </f:SimpleForm>
+        </content>
+    </Page>
+</mvc:View>
