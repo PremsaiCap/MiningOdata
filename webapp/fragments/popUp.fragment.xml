@@ -1,0 +1,40 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m">
+   
+    <SelectDialog title="Location Description" items="{FragModel>/newSupp}" confirm="onConfirmSupp">
+        <items>
+            <StandardListItem info="{FragModel>LocDesc}"></StandardListItem>
+        </items>
+    </SelectDialog>
+
+    <!-- <SelectDialog title="Mining Resource" items="{FragModel>/newSupp}" confirm="onConfirmSupp">
+        <items>
+            <StandardListItem info="{FragModel>MinRes}"></StandardListItem>
+        </items>
+    </SelectDialog>
+
+    <SelectDialog title="Report on Mineral" items="{FragModel>/newSupp}" confirm="onConfirmSupp">
+        <items>
+            <StandardListItem info="{FragModel>RepMin}"></StandardListItem>
+        </items>
+    </SelectDialog>
+
+    <SelectDialog title="Mineral Type" items="{FragModel>/newSupp}" confirm="onConfirmSupp">
+        <items>
+            <StandardListItem info="{FragModel>MinType}"></StandardListItem>
+        </items>
+    </SelectDialog>
+
+    <SelectDialog title="Probability" items="{FragModel>/newSupp}" confirm="onConfirmSupp">
+        <items>
+            <StandardListItem info="{FragModel>ProbOut}"></StandardListItem>
+        </items>
+    </SelectDialog>
+
+    <SelectDialog title="Currency" items="{FragModel>/newSupp}" confirm="onConfirmSupp">
+        <items>
+            <StandardListItem info="{FragModel>MinCuky}"></StandardListItem>
+        </items>
+    </SelectDialog> -->
+
+</core:FragmentDefinition>
+

@@ -1,6 +1,7 @@
 <mvc:View controllerName="app.miningodata.controller.MiningView"
     xmlns:mvc="sap.ui.core.mvc"
     xmlns="sap.m"
+    xmlns:core="sap.ui.core"
     xmlns:comp="sap.ui.comp.filterbar">
     <Page id="MiningPage" title="{i18n>title1}">
         <content>
@@ -11,21 +12,74 @@
                             <Input id="Input1" placeholder="Enter LocationID" liveChange="onSearch"></Input>
                         </comp:control>
                     </comp:FilterItem>
-                    <comp:FilterItem  id="two" name="MinType" label="Location Description">
+                    <comp:FilterItem  id="three" name="LocDesc" label="Location Description">
                         <comp:control>
-                            <Input id="Input2" placeholder="Enter Location Description" liveChange="onSearch"></Input>
+                            <Input id="Input3" placeholder="Enter Location Description" liveChange="onSearch"></Input>
+                        </comp:control>
+                    </comp:FilterItem>
+                    <comp:FilterItem  id="four" name="MinRes" label="Mining Resource">
+                        <comp:control>
+                            <Input id="Input4" placeholder="Enter Mining Resource" liveChange="onSearch"></Input>
+                        </comp:control>
+                    </comp:FilterItem>
+                    <comp:FilterItem  id="five" name="NumDrills" label="Number of Drills">
+                        <comp:control>
+                            <Input id="Input5" placeholder="Enter Number of Drills" liveChange="onSearch"></Input>
+                        </comp:control>
+                    </comp:FilterItem>
+                    <comp:FilterItem  id="six" name="TotCost" label="Total Cost">
+                        <comp:control>
+                            <Input id="Input6" placeholder="Enter Total Cost" liveChange="onSearch"></Input>
+                        </comp:control>
+                    </comp:FilterItem>
+                    <comp:FilterItem  id="seven" name="ManDays" label="Man Days">
+                        <comp:control>
+                            <Input id="Input7" placeholder="Enter Man Days" liveChange="onSearch"></Input>
+                        </comp:control>
+                    </comp:FilterItem>
+                    <comp:FilterItem  id="eight" name="MinType" label="Mineral Type">
+                        <comp:control>
+                            <Input id="Input8" placeholder="Enter Mineral Type" liveChange="onSearch"></Input>
+                        </comp:control>
+                    </comp:FilterItem>
+                    <comp:FilterItem  id="nine" name="ProbOut" label="Probability">
+                        <comp:control>
+                            <Input id="Input9" placeholder="Enter Probability" liveChange="onSearch"></Input>
+                        </comp:control>
+                    </comp:FilterItem>
+                    <comp:FilterItem  id="ten" name="MinCuky" label="Currency">
+                        <comp:control>
+                            <Input id="Input10" placeholder="Enter Currency" liveChange="onSearch"></Input>
                         </comp:control>
                     </comp:FilterItem>
                 </comp:filterItems>
             </comp:FilterBar>
 
 
+            <FlexBox justifyContent="End">
+                <items>
+                    <Button id="idCreateButton" text="Create" press="onCreatePress" class="sapUiSmallMarginEnd" type="Emphasized"></Button>
+                </items>
+            </FlexBox>
+            
+            <HBox>
+                <Select id="sortSelect" change="onSortChange">
+                    <items>
+                        <core:Item key="LocId" text="Location ID"/>
+                        <core:Item key="LocDesc" text="Location Description"/>
+                        <core:Item key="MinRes" text="Mining Resource"/>
+                        <core:Item key="TotCost" text="Total Cost"/>
+                        <core:Item key="NumDrills" text="Number of Drills"/>
+                        <core:Item key="ManDays" text="Man Days"/>
+                        <core:Item key="MinType" text="Mineral Type"/>
+                        <core:Item key="ProbOut" text="Probability of Outcome"/>
+                        <core:Item key="MinCuky" text="Currency"/>
+                    </items>
+                </Select>
+                <ToggleButton id="sortOrderToggle" text="Ascending" press="onSortOrderChange"/>
+            </HBox>
+            
 
-
-
-
-
-            <Button id="idCreateButton" text="Create New" press="onCreatePress"></Button>
             <Table items="{MiningModel>/}" id="idMiningTab" mode="SingleSelectMaster" selectionChange="onRowSelection">
                 <columns>
                     <Column id="1">
@@ -68,14 +122,18 @@
                         <Text text="{MiningModel>LocId}" id="text1"></Text>
                         <Text text="{MiningModel>LocDesc}" id="text2"></Text>
                         <Text text="{MiningModel>MinRes}" id="text3"></Text>
-                        <Text text="{MiningModel>TotCost}" id="text4"></Text>
+                        <Text text="{parts:[{path:'MiningModel>TotCost'},{path:'MiningModel>MinCuky'}], formatter:'.currencyFormatter'}" id="text4"></Text>
                         <Text text="{MiningModel>RepMin}" id="text5"></Text>
                         <Text text="{MiningModel>NumDrills}" id="text6"></Text>
                         <Text text="{MiningModel>MinType}" id="text7"></Text>
                         <Text text="{MiningModel>ManDays}" id="text8"></Text>
                         <Text text="{MiningModel>ProbOut}" id="text9"></Text>
                         <Text text="{MiningModel>MinCuky}" id="text10"></Text>
-                        <Button icon="sap-icon://delete" press="onDelete" id="deleteButton"></Button>
+                        <HBox>
+                            <Button icon="sap-icon://delete" press="onDelete" id="deleteButton"></Button>
+                            <Button icon="sap-icon://edit" press="onEdit" id="editButton"></Button>
+                        </HBox>
+                        
                     </cells>
                 </ColumnListItem>
             </Table>

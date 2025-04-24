@@ -51,7 +51,11 @@ sap.ui.define([
             let sMdays=oMdays.getValue()
             let sPrOt=oPrOt.getValue().toUpperCase()
             let sCurrKey=oCurrKey.getValue().toUpperCase()
-     
+            
+            if(!sLocId || !sLocDes || !sMdays || !sCurrKey || !sDrills || !sMinRes || !sPrOt || !sRepOnMin || !sTMin || !sTotCos){
+                MessageBox.error("All fields are required")
+                return
+            }
      
             let payload={
                 "LocDesc":sLocDes,
@@ -64,6 +68,8 @@ sap.ui.define([
                 "ProbOut":sPrOt,
                 "MinCuky":sCurrKey
             }
+
+            
             // first step: get the model
             let oModel=this.getModel()
      
@@ -78,6 +84,7 @@ sap.ui.define([
                         let oRouter = that.getRouter()
                         
                         oRouter.navTo("RouteMiningView")
+                        that._getData()
                     }.bind(that)
                 })
                 
@@ -86,7 +93,11 @@ sap.ui.define([
                 MessageBox.error("Failed to update record")
             }
             })
+        },
+
+        onPress:function(){
+            let oRouter = this.getRouter()
+            oRouter.navTo("RouteMiningView")
         }
-        
     });
 });

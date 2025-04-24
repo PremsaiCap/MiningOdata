@@ -25,6 +25,10 @@ sap.ui.define([
             oRouter.navTo("RouteUpdateView",{
                 indexUpdate:this.index
             })
+        },
+        onPress:function(){
+            let oRouter = this.getRouter()
+            oRouter.navTo("RouteMiningView")
         }
     });
 });

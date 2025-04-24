@@ -7,7 +7,7 @@ function(BaseController,MessageBox){
 
     return BaseController.extend("app.miningodata.controller.App",{
         onInit:function() {
-
+            this._getData()
         },
         getRouter:function(){
             return this.getOwnerComponent().getRouter();
@@ -26,6 +26,7 @@ function(BaseController,MessageBox){
                 success:function(odata,resp){
                     let jModel = that.getModel("MiningModel")
                     jModel.setData(odata.results)
+                    jModel.setDefaultBindingMode(sap.ui.model.BindingMode.OneWay)
                 },
                 error:function(oError){
                     MessageBox.error("couldn't fetch data")

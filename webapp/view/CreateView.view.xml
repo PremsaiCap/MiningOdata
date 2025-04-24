@@ -2,42 +2,69 @@
     xmlns:mvc="sap.ui.core.mvc"
     xmlns="sap.m"
     xmlns:f="sap.ui.layout.form">
-    <Page id="CreatePage" title="{i18n>title2}">
+    <Page id="CreatePage" title="{i18n>title2}" showNavButton="true" navButtonPress="onPress">
+        <headerContent>
+            <Toolbar>
+                <!-- <Title text="{i18n>title2}"></Title>
+                <ToolbarSpacer></ToolbarSpacer>
+                <Button id="idButtonCrh" text="Submit" press="onSubmit" icon="sap-icon://accept" type="Accept"></Button> -->
+            </Toolbar>
+        </headerContent>
         <content>
-            <f:SimpleForm editable="true">
+        
+            <!-- <VBox alignItems="Center" justifyContent="Center">
+
+            <Panel headerText="Mining Details" expandable="false" expanded="true"> -->
+            <f:SimpleForm editable="true"
+            layout="ResponsiveGridLayout"
+			labelSpanXL="4"
+			labelSpanL="3"
+			labelSpanM="4"
+			labelSpanS="12"
+			adjustLabelSpan="false"
+			emptySpanXL="0"
+			emptySpanL="4"
+			emptySpanM="0"
+			emptySpanS="0"
+			columnsXL="2"
+			columnsL="1"
+			columnsM="1"
+			singleContainerFullSize="false">
                 
                 <Label text="Location ID"></Label>
-                <Input id="idLocIdC" required="true"></Input>
+                <Input id="idLocIdC" placeholder="LOCxxxxxx (x->(0-9) and LOC000000 is not allowed)" required="true"></Input>
 
                 <Label text="Location Description"></Label>
-                <Input id="idLocDesC"></Input>
+                <Input id="idLocDesC" showValueHelp="true" valueHelpRequest="onF4Help"></Input>
 
                 <Label text="Mining Resource"></Label>
-                <Input id="idMinResC"></Input>
+                <Input id="idMinResC" showValueHelp="true" valueHelpRequest="onF4Help"></Input>
 
                 <Label text="Total Cost"></Label>
                 <Input id="idTotCosC"></Input>
 
                 <Label text="Report on Mineral"></Label>
-                <Input id="idRepOnMinC"></Input>
+                <Input id="idRepOnMinC" showValueHelp="true" valueHelpRequest="onF4Help"></Input>
 
                 <Label text="Number of Drills"></Label>
                 <Input id="idDrillsC"></Input>
 
                 <Label text="Type of Mineral"></Label>
-                <Input id="idTMinC"></Input>
+                <Input id="idTMinC" showValueHelp="true" valueHelpRequest="onF4Help"></Input>
 
                 <Label text="Man Days"></Label>
                 <Input id="idMdaysC"></Input>
 
                 <Label text="Probability of Outcome"></Label>
-                <Input id="idPrOtC"></Input>
+                <Input id="idPrOtC" showValueHelp="true" valueHelpRequest="onF4Help"></Input>
 
                 <Label text="Currency"></Label>
-                <Input id="idCurrKeyC"></Input>
+                <Input id="idCurrKeyC" showValueHelp="true" valueHelpRequest="onF4Help"></Input>
 
-                <Button id="idButtonCr" text="Create or Submit" press="onSubmit"></Button>
+                <Button id="idButtonCr" text="Submit" press="onSubmit"  type="Emphasized"></Button>
             </f:SimpleForm>
+            <!-- </Panel>
+            </VBox> -->
         </content>
     </Page>
 </mvc:View>

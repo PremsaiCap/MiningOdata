@@ -58,7 +58,7 @@
     }
   },
   "sap.ui5": {
-    "flexEnabled": true,
+    "flexEnabled": false,
     "dependencies": {
       "minUI5Version": "1.134.1",
       "libs": {
@@ -83,7 +83,10 @@
         "settings": {}
       },
       "MiningModel":{
-        "type": "sap.ui.model.json.JSONModel"
+        "type": "sap.ui.model.json.JSONModel",
+        "settings": {
+          "defaultBindingMode": "OneWay"
+        }
       }
     },
     "resources": {
